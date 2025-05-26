@@ -1,0 +1,39 @@
+class Point:
+    def _init_(self, x, y):
+        self.x = x
+        self.y = y
+
+class Line:
+    def _init_(self, start, end):
+        self.start = start
+        self.end = end
+
+    def length(self):
+        return ((self.end.x - self.start.x)*2 + (self.end.y - self.start.y)2)*0.5
+
+class Shape:
+    def compute_area(self):
+        return 0  
+
+    def compute_perimeter(self):
+        return 0
+
+class Rectangle(Shape):
+    def _init_(self, width, height):
+        self.width = width
+        self.height = height
+
+    def compute_area(self):
+        return self.width * self.height
+
+    def compute_perimeter(self):
+        return 2 * (self.width + self.height)
+
+p1 = Point(1, 2)
+p2 = Point(4, 6)
+line = Line(p1, p2)
+print("Longitud de la línea:", line.length())
+
+rect = Rectangle(5, 10)
+print("Área del rectángulo:", rect.compute_area())
+print("Perímetro del rectángulo:", rect.compute_perimeter())
