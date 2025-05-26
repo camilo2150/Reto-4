@@ -1,0 +1,40 @@
+class Shape:
+    def compute_area(self):
+        pass
+
+    def compute_perimeter(self):
+        pass
+
+class Rectangle(Shape):
+    def _init_(self, width, height):
+        self.width = width
+        self.height = height
+
+    def compute_area(self):
+        return self.width * self.height
+
+    def compute_perimeter(self):
+        return 2 * (self.width + self.height)
+
+class Square(Shape):
+    def _init_(self, side):
+        self.side = side
+
+    def compute_area(self):
+        return self.side ** 2
+
+    def compute_perimeter(self):
+        return 4 * self.side
+
+shapes = [
+    Rectangle(4, 6),
+    Square(5),
+    Rectangle(2, 3),
+    Square(7)
+]
+
+for shape in shapes:
+    print(f"Figura: {type(shape)._name_}")
+    print(f"Área: {shape.compute_area()}")
+    print(f"Perímetro: {shape.compute_perimeter()}")
+    print("-" * 40)
